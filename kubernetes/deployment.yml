@@ -1,0 +1,21 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: notificationmicroservice
+  labels:
+    app: notificationmicroservice
+spec:
+  replicas: #replicaNo#
+  selector:
+    matchLabels:
+      app: notificationmicroservice
+  template:
+    metadata:
+      labels:
+        app: notificationmicroservice
+    spec:
+      containers:
+        - name: notificationmicroservice
+          image: dangotedmsimages.azurecr.io/notificationmicroservice
+          ports:
+            - containerPort: 80
